@@ -29,22 +29,22 @@ void main() {
         'private': (
           BotswanaPlates.private,
           BotswanaThemes.private,
-          'B 9 6 2 A T H',
+          'B 962 ATH',
         ),
         'private_rear': (
           BotswanaPlates.private,
           BotswanaThemes.privateRear,
-          'B 8 8 6 A J R',
+          'B 886 AJR',
         ),
         'public': (
           BotswanaPlates.publicService,
           BotswanaThemes.publicService,
-          'B 8 5 3 B A G',
+          'B 853 BAG',
         ),
         'government': (
           BotswanaPlates.government,
           BotswanaThemes.government,
-          'B X 1 5 3 0 4 2',
+          'BX 153042',
         ),
       };
 

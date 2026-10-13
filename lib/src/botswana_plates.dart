@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:plate_alphabet/plate_alphabet.dart';
 import 'package:plate_core/plate_core.dart';
 
@@ -54,14 +56,19 @@ abstract final class BotswanaPlates {
     final double pitch = (_Layout.right - _Layout.left) / count;
     List<PlateSlot> run(PlateAlphabet alphabet, int n, int from) => n == 0
         ? const <PlateSlot>[]
-        : plateRegister(
-            alphabet: alphabet,
-            count: n,
-            left: _Layout.left + from * pitch,
-            top: _Layout.cy - _Layout.box / 2,
-            width: pitch,
-            height: _Layout.box,
-          );
+        : <PlateSlot>[
+            PlateSlot(
+              alphabet: alphabet,
+              box: PlateBox(
+                _Layout.left + from * pitch,
+                _Layout.cy - _Layout.box / 2,
+                n * pitch,
+                _Layout.box,
+              ),
+              length: n,
+              spacing: max(0, pitch - 0.6 * 0.72 * _Layout.box),
+            ),
+          ];
     return PlateSpec(
       id: id,
       country: BotswanaCountry.botswana,
@@ -75,16 +82,9 @@ abstract final class BotswanaPlates {
         ...run(BotswanaAlphabets.letters, suffix, prefix + digits),
       ],
       textGroups: <PlateTextGroup>[
-        PlateTextGroup(<int>[
-          for (int i = 0; i < prefix; i++) i,
-        ], key: 'prefix'),
-        PlateTextGroup(<int>[
-          for (int i = 0; i < digits; i++) prefix + i,
-        ], key: 'serial'),
-        if (suffix > 0)
-          PlateTextGroup(<int>[
-            for (int i = 0; i < suffix; i++) prefix + digits + i,
-          ], key: 'suffix'),
+        PlateTextGroup(const <int>[0], key: 'prefix'),
+        PlateTextGroup(const <int>[1], key: 'serial'),
+        if (suffix > 0) PlateTextGroup(const <int>[2], key: 'suffix'),
       ],
     );
   }
