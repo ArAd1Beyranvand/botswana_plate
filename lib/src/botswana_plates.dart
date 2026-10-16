@@ -25,21 +25,18 @@ abstract final class _Layout {
   static const double cy = 68, box = 124;
 }
 
-/// Botswana's current plates: a prefix, a number and, on private and public
-/// plates, three letters. Groups `prefix`, `serial`, `suffix`. Colour is the
-/// theme's: [private] pairs with [BotswanaThemes.private] or
-/// [BotswanaThemes.privateRear], [publicService] with
-/// [BotswanaThemes.publicService], [government] with
-/// [BotswanaThemes.government].
+/// A prefix, a number and, on private and public plates, three letters.
+/// Groups: `prefix`, `serial`, `suffix`. Colour comes from the theme
+/// ([BotswanaThemes.private] or [BotswanaThemes.privateRear], then
+/// [BotswanaThemes.publicService], [BotswanaThemes.government]).
 ///
-/// Not implemented: the BDF defence plates (green), the red-on-white BX front
-/// plate and the diplomatic plates, for which no reference was measured. The
-/// article names no Israel-specific value.
+/// Not implemented, for lack of a measured reference: the BDF defence plates,
+/// the red-on-white BX front plate and the diplomatic plates.
 abstract final class BotswanaPlates {
   /// `B 123 ABC`.
   static final PlateSpec private = _spec('bw.private', 1, 3, 3);
 
-  /// `B 123 ABC`, same layout as [private].
+  /// `B 123 ABC`.
   static final PlateSpec publicService = _spec('bw.public', 1, 3, 3);
 
   /// `BX 123456`.

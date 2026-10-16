@@ -3,10 +3,8 @@ import 'package:plate_core/plate_core.dart';
 
 import 'botswana_colors.dart';
 
-/// One ink on one field, the frame in the ink.
-///
-/// Only the front plate shows a frame line in the photos; the border is a thin
-/// 0.02 of the height and the corners round at 0.04, neither measured.
+/// One ink on one field, the frame in the ink. Border (0.02) and corner (0.04)
+/// ratios are estimates.
 abstract final class BotswanaThemes {
   /// Private front plate: black on white.
   static final PlateTheme private = _ink(
