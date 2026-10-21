@@ -1,5 +1,7 @@
 import 'package:plate_core/plate_core.dart';
 
+final RegExp _register = RegExp(r'^[A-PR-Z]{3}$');
+
 /// Judges a private or public plate (`B 123 ABC`): the letter B, three digits
 /// and three letters, none of them Q. Reports, never bars a keystroke.
 class BotswanaValidator extends GatedPlateValidator {
@@ -20,7 +22,7 @@ class BotswanaValidator extends GatedPlateValidator {
     if (!isDigitsOfLength(entry.group('serial'), 3)) {
       return const PlateValidation.invalid(reasonSerial);
     }
-    if (!RegExp(r'^[A-PR-Z]{3}$').hasMatch(entry.group('suffix'))) {
+    if (!_register.hasMatch(entry.group('suffix'))) {
       return const PlateValidation.invalid(reasonSuffix);
     }
     return const PlateValidation.valid();
