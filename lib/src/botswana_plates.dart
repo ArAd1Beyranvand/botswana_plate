@@ -42,11 +42,7 @@ abstract final class BotswanaPlates {
   /// `BX 123456`.
   static final PlateSpec government = _spec('bw.government', 2, 6, 0);
 
-  static List<PlateSpec> get all => <PlateSpec>[
-    private,
-    publicService,
-    government,
-  ];
+  static List<PlateSpec> get all => <PlateSpec>[private, publicService, government];
 
   static PlateSpec _spec(String id, int prefix, int digits, int suffix) {
     final int count = prefix + digits + suffix;

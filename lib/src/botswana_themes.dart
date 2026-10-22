@@ -7,28 +7,16 @@ import 'botswana_colors.dart';
 /// ratios are estimates.
 abstract final class BotswanaThemes {
   /// Private front plate: black on white.
-  static final PlateTheme private = _ink(
-    BotswanaColors.white,
-    BotswanaColors.whiteInk,
-  );
+  static final PlateTheme private = _ink(BotswanaColors.white, BotswanaColors.whiteInk);
 
   /// Private rear plate: black on yellow.
-  static final PlateTheme privateRear = _ink(
-    BotswanaColors.yellow,
-    BotswanaColors.yellowInk,
-  );
+  static final PlateTheme privateRear = _ink(BotswanaColors.yellow, BotswanaColors.yellowInk);
 
   /// Public service, front and rear: white on blue.
-  static final PlateTheme publicService = _ink(
-    BotswanaColors.blue,
-    BotswanaColors.blueInk,
-  );
+  static final PlateTheme publicService = _ink(BotswanaColors.blue, BotswanaColors.blueInk);
 
   /// Government rear: white on red.
-  static final PlateTheme government = _ink(
-    BotswanaColors.red,
-    BotswanaColors.redInk,
-  );
+  static final PlateTheme government = _ink(BotswanaColors.red, BotswanaColors.redInk);
 }
 
 PlateTheme _ink(Color field, Color ink) => PlateTheme.monochrome(
