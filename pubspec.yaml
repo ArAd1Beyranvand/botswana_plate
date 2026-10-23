@@ -1,7 +1,7 @@
 name: botswana_plate
 description: "Botswana's licence plates for the plate_core library: private, public service and government plates."
 version: 0.1.0
-publish_to: none
+repository: https://github.com/ArAd1Beyranvand/botswana_plate
 resolution: workspace
 
 environment:
