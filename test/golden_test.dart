@@ -26,9 +26,9 @@ void main() {
   /// category id -> (spec, theme, space-separated sample value)
   final Map<String, (PlateSpec, PlateTheme, String)> cases =
       <String, (PlateSpec, PlateTheme, String)>{
-        'private': (BotswanaPlates.private, BotswanaThemes.private, 'B 962 ATH'),
-        'private_rear': (BotswanaPlates.private, BotswanaThemes.privateRear, 'B 886 AJR'),
-        'public': (BotswanaPlates.publicService, BotswanaThemes.publicService, 'B 853 BAG'),
+        'private': (BotswanaPlates.civil, BotswanaThemes.private, 'B 962 ATH'),
+        'private_rear': (BotswanaPlates.civil, BotswanaThemes.privateRear, 'B 886 AJR'),
+        'public': (BotswanaPlates.civil, BotswanaThemes.publicService, 'B 853 BAG'),
         'government': (BotswanaPlates.government, BotswanaThemes.government, 'BX 153042'),
       };
 

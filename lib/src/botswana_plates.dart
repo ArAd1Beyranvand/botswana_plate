@@ -25,7 +25,7 @@ abstract final class _Layout {
   static const double cy = 68, box = 124;
 }
 
-/// A prefix, a number and, on private and public plates, three letters.
+/// A prefix, a number and, on civil plates, three letters.
 /// Groups: `prefix`, `serial`, `suffix`. Colour comes from the theme
 /// ([BotswanaThemes.private] or [BotswanaThemes.privateRear], then
 /// [BotswanaThemes.publicService], [BotswanaThemes.government]).
@@ -33,16 +33,14 @@ abstract final class _Layout {
 /// Not implemented, for lack of a measured reference: the BDF defence plates,
 /// the red-on-white BX front plate and the diplomatic plates.
 abstract final class BotswanaPlates {
-  /// `B 123 ABC`.
-  static final PlateSpec private = _spec('bw.private', 1, 3, 3);
-
-  /// `B 123 ABC`.
-  static final PlateSpec publicService = _spec('bw.public', 1, 3, 3);
+  /// `B 123 ABC`: private (white front, yellow rear) and public service
+  /// (blue) share the geometry; only the theme differs.
+  static final PlateSpec civil = _spec('bw.civil', 1, 3, 3);
 
   /// `BX 123456`.
   static final PlateSpec government = _spec('bw.government', 2, 6, 0);
 
-  static List<PlateSpec> get all => <PlateSpec>[private, publicService, government];
+  static List<PlateSpec> get all => <PlateSpec>[civil, government];
 
   static PlateSpec _spec(String id, int prefix, int digits, int suffix) {
     final int count = prefix + digits + suffix;

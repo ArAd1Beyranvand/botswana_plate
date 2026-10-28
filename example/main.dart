@@ -16,7 +16,7 @@ class ExampleApp extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(16),
             child: PlateCanvas(
-              spec: BotswanaPlates.private,
+              spec: BotswanaPlates.civil,
               theme: BotswanaThemes.private,
               onChooseCharacter: (alphabet) async => null,
             ),
