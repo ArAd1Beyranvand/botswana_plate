@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:plate_alphabet/plate_alphabet.dart';
 import 'package:plate_core/plate_core.dart';
 
@@ -20,8 +18,7 @@ import 'botswana_country.dart';
 /// would need a ~180-unit box, so the box is capped at the canvas and the ink
 /// lands near 70% of the photos'.
 abstract final class _Layout {
-  static const double width = 520, height = 130;
-  static const double left = 24, right = 499;
+  static const double width = 520, height = 130, left = 24, right = 499;
   static const double cy = 68, box = 124;
 }
 
@@ -48,16 +45,13 @@ abstract final class BotswanaPlates {
     List<PlateSlot> run(PlateAlphabet alphabet, int n, int from) => n == 0
         ? const <PlateSlot>[]
         : <PlateSlot>[
-            PlateSlot(
-              alphabet: alphabet,
-              box: PlateBox(
-                _Layout.left + from * pitch,
-                _Layout.cy - _Layout.box / 2,
-                n * pitch,
-                _Layout.box,
-              ),
-              length: n,
-              spacing: max(0, pitch - 0.6 * 0.72 * _Layout.box),
+            plateRun(
+              alphabet,
+              n,
+              left: _Layout.left + from * pitch,
+              top: _Layout.cy - _Layout.box / 2,
+              pitch: pitch,
+              height: _Layout.box,
             ),
           ];
     return PlateSpec(
@@ -65,8 +59,6 @@ abstract final class BotswanaPlates {
       country: BotswanaCountry.botswana,
       canvasWidth: _Layout.width,
       canvasHeight: _Layout.height,
-      panel: const PlatePanel(box: PlateBox(0, 0, 0, 0)),
-      noPanel: true,
       slots: <PlateSlot>[
         ...run(BotswanaAlphabets.letters, prefix, 0),
         ...run(BotswanaAlphabets.digits, digits, prefix),

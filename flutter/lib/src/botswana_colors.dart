@@ -23,6 +23,4 @@ abstract final class BotswanaColors {
   static const Color red = Color(0xFFF12D31);
 
   static const Color redInk = Color(0xFFFBEDFE);
-
-  static const Color inactive = Color(0xFFB0B0B0);
 }

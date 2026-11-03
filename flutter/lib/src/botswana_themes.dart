@@ -34,7 +34,6 @@ abstract final class BotswanaThemes {
 PlateTheme _ink(Color field, Color ink) => PlateTheme.monochrome(
   field: field,
   ink: ink,
-  inactive: BotswanaColors.inactive,
   borderWidthRatio: 0.02,
   plateRadiusRatio: 0.04,
 );

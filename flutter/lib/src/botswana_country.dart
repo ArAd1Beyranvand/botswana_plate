@@ -7,7 +7,6 @@ import 'botswana_colors.dart';
 abstract final class BotswanaCountry {
   static const PlateCountry botswana = PlateCountry(
     code: 'bw',
-    captionLines: <String>[],
     panelColor: BotswanaColors.white,
     panelTextColor: BotswanaColors.whiteInk,
   );
